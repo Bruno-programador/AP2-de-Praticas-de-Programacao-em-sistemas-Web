@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AP2</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		div#lado1 {
+			float: left;
+			width: 45%;
+			border-right: 5px dashed rgb(0,0,0)
+		}
+		div#lado2 {
+			float: left;
+			width: 45%;
+			margin-left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="lado1">
+		<h1>Questão 1</h1>
+		<input type="number" name="valor1" id="valor1">
+		<input type="number" name="valor2" id="valor2">
+		<input type="number" name="valor3" id="valor3">
+		<input type="button" value="media" onclick="aritimetica()">
+		<p id = mediares> A media aritimetica é</p>
+		<script type="text/javascript">
+			function aritimetica(){
+				var v1 = Number(document.getElementById('valor1').value)
+				var v2 = Number(document.getElementById('valor2').value)
+				var v3 = Number(document.getElementById('valor3').value)
+				var res = (v1 + v2 + v3)/3
+				mediares.innerHTML = `A media aritimetica é ${res}`
+			}
+		</script>
+
+		<h1>Questão 2</h1>
+		<input type="text" name="funcionario" id="funcionario" placeholder="Nome do funcionario">
+		<input type="number" name="salario" id="salario">
+		<input type="button" value="salario" onclick="salario()">
+		<p id="novosalario">O novo salário é</p>
+		<script type="text/javascript">
+			function salario(){
+				var func = document.getElementById('funcionario').value
+				var sal = Number(document.getElementById('salario').value)
+				var res = sal * 1.1
+				novosalario.innerHTML = `O novo salario de ${func} é ${res}`
+			}
+		</script>
+		
+		<h1>Questão 3</h1>
+		<input type="number" name="A" id="A">
+		<input type="number" name="B" id="B">
+		<input type="button" value="calc" onclick="AeB()">
+		<p id="resp3">O valor é</p>
+		<script type="text/javascript">
+			function AeB(){
+				var A = Number(document.getElementById('A').value)
+				var B = Number(document.getElementById('B').value)
+				if (A == B) {
+					var C = A + B
+				}
+				else {
+					var C = A * B
+				}
+				 resp3.innerHTML = `O valor é ${C}`
+			}
+		</script>
+
+		<h1>Questão 4</h1>
+		<input type="number" name="prestacao" id="prestacao" placeholder="Valor a vista">
+		<input type="button" value="prestação" onclick="parcela()">
+		<p id="vezes3">Valor total, parcelado em 3 vezes</p>
+		<p id="vezes5">Valor total, parcelado em 5 vezes</p>
+		<script type="text/javascript">
+			function parcela(){
+				var total = Number(document.getElementById("prestacao").value)
+				var vez3 = total * 1.1
+				var parc3 = vez3 / 3
+				vezes3.innerHTML = `O valor total é ${vez3}, parcelado em 3 vezes, a parcela fica ${parc3}`
+				var vez5 = total * 1.2
+				var parc5 = vez5 / 5
+				vezes5.innerHTML = `O valor total é ${vez5}, parcelado em 5 vezes, a parcela fica ${parc5}`
+			}
+		</script>
+
+		<h1>Questão 5</h1>
+		<input type="text" name="aluno" id="aluno" placeholder="Nome do aluno">
+		<input type="number" name="nota1" id="nota1" placeholder="Primeira nota">
+		<input type="number" name="nota2" id="nota2" placeholder="Segunda nota">
+		<input type="number" name="nota3" id="nota3" placeholder="Terceira nota">
+		<input type="button" value="media" onclick="media()">
+		<p id ="resp5">Nome do aluno, sua media e situação</p>
+		<script type="text/javascript">
+			function media(){
+				var aluno = document.getElementById('aluno').value
+				var nota1 = Number(document.getElementById('nota1').value)
+				var nota2 = Number(document.getElementById('nota2').value)
+				var nota3 = Number(document.getElementById('nota3').value)
+				var media = (nota1 + nota2 + nota3)/3
+				if (media >= 8) {
+					resp5.innerHTML = `${aluno} tem media ${media} e ficou aprovado`
+				}
+				else {
+					resp5.innerHTML = `${aluno} tem media ${media} e ficou reprovado`
+				}
+			}
+		</script>
+	</div>
+
+	<div id="lado2">
+		<h1>Questão 6</h1>
+		<input type="number" name="numero1" id="numero1">
+		<input type="number" name="numero2" id="numero2">
+		<input type="number" name="codselecao" id="codselecao" min="1" max="3" placeholder="Código de seleção">
+		<input type="button" value="confirmar" onclick="calculadora()">
+		<p id="resp6">Resultado</p>
+		<script type="text/javascript">
+			function calculadora(){
+				var num1 = Number(document.getElementById("numero1").value)
+				var num2 = Number(document.getElementById("numero2").value)
+				var cod = Number(document.getElementById("codselecao").value)
+				if (cod == 1) {
+					var resp = num1 + num2
+				}
+				else if (cod == 2){
+					var resp = num1 * num2
+				}
+				else if (cod == 3){
+					var resp = num1 / num2
+				}
+				resp6.innerHTML = `O resultado é ${resp}`
+			}
+		</script>
+
+		<h1>Questão 8</h1>
+		<input type="button" value="somar" onclick="somawhile()">
+		<p id="resp8">A soma é</p>
+		<script type="text/javascript">
+			function somawhile(){
+				var n = 0
+				var soma = 0
+				while (n < 20){
+					var num = Number(prompt(`Numero  ${n + 1}`))
+					soma += num
+					n += 1
+				}
+				resp8.innerHTML = `A soma é ${soma}`
+			}
+		</script>
+
+		<h1>Questão 9</h1>
+		<input type="button" value="somar" onclick="somadowhile()">
+		<p id="resp9">A soma é</p>
+		<script type="text/javascript">
+			function somadowhile(){
+				var n = 0
+				var soma = 0
+				do{
+					var num = Number(prompt(`Numero  ${n + 1}`))
+					soma += num
+					n += 1
+				} while (n < 20)
+				resp9.innerHTML = `A soma é ${soma}`
+			}
+		</script>
+
+		<h1>Questão 10</h1>
+		<input type="button" value="pedidos" onclick="lanchonete()">
+		<p id="resp10">O total ficou R$</p>
+		<script type="text/javascript">
+			function lanchonete(){
+				var total = 0
+				var lista = [{
+					codigo: 100,
+					nome:"cachorro quente",
+					valor:1.70},
+					{
+					codigo: 101,
+					nome:"bauru simples",
+					valor:2.30},
+					{
+					codigo: 102,
+					nome:"bauru com ovo",
+					valor:2.60},
+					{
+					codigo: 103,
+					nome:"hamburguer",
+					valor:2.40},
+					{
+					codigo: 104,
+					nome:"cheeseburguer",
+					valor:2.50},
+					{
+					codigo: 105,
+					nome:"refrigerante",
+					valor:1.00}
+					]
+				while (cod != 0){
+					var cod = Number(prompt('codigo do produto \n 0 para sair'))
+					for (var i = 0; i < lista.length; i++) {
+						if (cod == lista[i].codigo){
+							total += lista[i].valor
+						}
+					 } 
+				}
+				resp10.innerHTML = `O total ficou R$ ${total}`
+			}
+		</script>
+
+		<h1>Questão 11</h1>
+		<p id="resp11">resposta</p>
+		<script type="text/javascript">
+			function quadrado(){
+				var tot = ''
+				for (var i = 1; i <= 100; i++) {
+					if (i % 2 == 0) {
+						var qd = i**2
+						if (tot != '') {
+							tot += ', ' + qd	
+						}
+						else {
+							tot += qd
+						}
+						/*if (i == 50){
+							tot += '\n'
+						}*/
+
+					}
+				}
+				resp11.innerHTML = tot
+			}
+			quadrado()
+		</script>
+	</div>
+
+</body>
+</html>
